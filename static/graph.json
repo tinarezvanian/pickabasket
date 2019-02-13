@@ -1,0 +1,798 @@
+{
+    "nodes": [
+        {
+            "name": "mineral water",
+            "club": {}
+        },
+        {
+            "name": "avocado",
+            "club": {}
+        },
+        {
+            "name": "cake",
+            "club": {}
+        },
+        {
+            "name": "burgers",
+            "club": {}
+        },
+        {
+            "name": "chocolate",
+            "club": {}
+        },
+        {
+            "name": "eggs",
+            "club": {}
+        },
+        {
+            "name": "french fries",
+            "club": {}
+        },
+        {
+            "name": "frozen vegetables",
+            "club": {}
+        },
+        {
+            "name": "green tea",
+            "club": {}
+        },
+        {
+            "name": "ground beef",
+            "club": {}
+        },
+        {
+            "name": "milk",
+            "club": {}
+        },
+        {
+            "name": "pancakes",
+            "club": {}
+        },
+        {
+            "name": "spaghetti",
+            "club": {}
+        },
+        {
+            "name": "turkey",
+            "club": {}
+        },
+        {
+            "name": "cereals",
+            "club": {}
+        },
+        {
+            "name": "champagne",
+            "club": {}
+        },
+        {
+            "name": "chicken",
+            "club": {}
+        },
+        {
+            "name": "cookies",
+            "club": {}
+        },
+        {
+            "name": "cooking oil",
+            "club": {}
+        },
+        {
+            "name": "escalope",
+            "club": {}
+        },
+        {
+            "name": "frozen smoothie",
+            "club": {}
+        },
+        {
+            "name": "grated cheese",
+            "club": {}
+        },
+        {
+            "name": "low fat yogurt",
+            "club": {}
+        },
+        {
+            "name": "olive oil",
+            "club": {}
+        },
+        {
+            "name": "salmon",
+            "club": {}
+        },
+        {
+            "name": "shrimp",
+            "club": {}
+        },
+        {
+            "name": "soup",
+            "club": {}
+        },
+        {
+            "name": "tomatoes",
+            "club": {}
+        },
+        {
+            "name": "whole wheat rice",
+            "club": {}
+        },
+        {
+            "name": "herb & pepper",
+            "club": {}
+        },
+        {
+            "name": "fresh bread",
+            "club": {}
+        },
+        {
+            "name": "honey",
+            "club": {}
+        },
+        {
+            "name": "red wine",
+            "club": {}
+        }
+    ],
+    "links": [
+        {
+            "source": "mineral water",
+            "target": "avocado"
+        },
+        {
+            "source": "mineral water",
+            "target": "burgers"
+        },
+        {
+            "source": "mineral water",
+            "target": "cake"
+        },
+        {
+            "source": "mineral water",
+            "target": "cereals"
+        },
+        {
+            "source": "mineral water",
+            "target": "chicken"
+        },
+        {
+            "source": "mineral water",
+            "target": "chocolate"
+        },
+        {
+            "source": "mineral water",
+            "target": "cooking oil"
+        },
+        {
+            "source": "mineral water",
+            "target": "eggs"
+        },
+        {
+            "source": "mineral water",
+            "target": "escalope"
+        },
+        {
+            "source": "mineral water",
+            "target": "french fries"
+        },
+        {
+            "source": "mineral water",
+            "target": "fresh bread"
+        },
+        {
+            "source": "mineral water",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "mineral water",
+            "target": "frozen vegetables"
+        },
+        {
+            "source": "mineral water",
+            "target": "grated cheese"
+        },
+        {
+            "source": "mineral water",
+            "target": "green tea"
+        },
+        {
+            "source": "mineral water",
+            "target": "ground beef"
+        },
+        {
+            "source": "mineral water",
+            "target": "herb & pepper"
+        },
+        {
+            "source": "mineral water",
+            "target": "honey"
+        },
+        {
+            "source": "mineral water",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "mineral water",
+            "target": "milk"
+        },
+        {
+            "source": "mineral water",
+            "target": "olive oil"
+        },
+        {
+            "source": "mineral water",
+            "target": "pancakes"
+        },
+        {
+            "source": "mineral water",
+            "target": "red wine"
+        },
+        {
+            "source": "mineral water",
+            "target": "salmon"
+        },
+        {
+            "source": "mineral water",
+            "target": "shrimp"
+        },
+        {
+            "source": "mineral water",
+            "target": "soup"
+        },
+        {
+            "source": "mineral water",
+            "target": "spaghetti"
+        },
+        {
+            "source": "mineral water",
+            "target": "tomatoes"
+        },
+        {
+            "source": "mineral water",
+            "target": "turkey"
+        },
+        {
+            "source": "mineral water",
+            "target": "whole wheat rice"
+        },
+        {
+            "source": "cake",
+            "target": "burgers"
+        },
+        {
+            "source": "cake",
+            "target": "chocolate"
+        },
+        {
+            "source": "cake",
+            "target": "eggs"
+        },
+        {
+            "source": "cake",
+            "target": "french fries"
+        },
+        {
+            "source": "cake",
+            "target": "frozen vegetables"
+        },
+        {
+            "source": "cake",
+            "target": "green tea"
+        },
+        {
+            "source": "cake",
+            "target": "milk"
+        },
+        {
+            "source": "cake",
+            "target": "pancakes"
+        },
+        {
+            "source": "cake",
+            "target": "spaghetti"
+        },
+        {
+            "source": "burgers",
+            "target": "chocolate"
+        },
+        {
+            "source": "burgers",
+            "target": "eggs"
+        },
+        {
+            "source": "burgers",
+            "target": "french fries"
+        },
+        {
+            "source": "burgers",
+            "target": "frozen vegetables"
+        },
+        {
+            "source": "burgers",
+            "target": "green tea"
+        },
+        {
+            "source": "burgers",
+            "target": "ground beef"
+        },
+        {
+            "source": "burgers",
+            "target": "milk"
+        },
+        {
+            "source": "burgers",
+            "target": "pancakes"
+        },
+        {
+            "source": "burgers",
+            "target": "spaghetti"
+        },
+        {
+            "source": "burgers",
+            "target": "turkey"
+        },
+        {
+            "source": "chocolate",
+            "target": "champagne"
+        },
+        {
+            "source": "chocolate",
+            "target": "chicken"
+        },
+        {
+            "source": "chocolate",
+            "target": "cookies"
+        },
+        {
+            "source": "chocolate",
+            "target": "cooking oil"
+        },
+        {
+            "source": "chocolate",
+            "target": "eggs"
+        },
+        {
+            "source": "chocolate",
+            "target": "escalope"
+        },
+        {
+            "source": "chocolate",
+            "target": "french fries"
+        },
+        {
+            "source": "chocolate",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "chocolate",
+            "target": "frozen vegetables"
+        },
+        {
+            "source": "chocolate",
+            "target": "grated cheese"
+        },
+        {
+            "source": "chocolate",
+            "target": "green tea"
+        },
+        {
+            "source": "chocolate",
+            "target": "ground beef"
+        },
+        {
+            "source": "chocolate",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "chocolate",
+            "target": "milk"
+        },
+        {
+            "source": "chocolate",
+            "target": "olive oil"
+        },
+        {
+            "source": "chocolate",
+            "target": "pancakes"
+        },
+        {
+            "source": "chocolate",
+            "target": "salmon"
+        },
+        {
+            "source": "chocolate",
+            "target": "shrimp"
+        },
+        {
+            "source": "chocolate",
+            "target": "soup"
+        },
+        {
+            "source": "chocolate",
+            "target": "spaghetti"
+        },
+        {
+            "source": "chocolate",
+            "target": "tomatoes"
+        },
+        {
+            "source": "chocolate",
+            "target": "turkey"
+        },
+        {
+            "source": "chocolate",
+            "target": "whole wheat rice"
+        },
+        {
+            "source": "eggs",
+            "target": "chicken"
+        },
+        {
+            "source": "eggs",
+            "target": "cookies"
+        },
+        {
+            "source": "eggs",
+            "target": "cooking oil"
+        },
+        {
+            "source": "eggs",
+            "target": "escalope"
+        },
+        {
+            "source": "eggs",
+            "target": "french fries"
+        },
+        {
+            "source": "eggs",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "eggs",
+            "target": "frozen vegetables"
+        },
+        {
+            "source": "eggs",
+            "target": "green tea"
+        },
+        {
+            "source": "eggs",
+            "target": "ground beef"
+        },
+        {
+            "source": "eggs",
+            "target": "herb & pepper"
+        },
+        {
+            "source": "eggs",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "eggs",
+            "target": "milk"
+        },
+        {
+            "source": "eggs",
+            "target": "olive oil"
+        },
+        {
+            "source": "eggs",
+            "target": "pancakes"
+        },
+        {
+            "source": "eggs",
+            "target": "shrimp"
+        },
+        {
+            "source": "eggs",
+            "target": "spaghetti"
+        },
+        {
+            "source": "eggs",
+            "target": "tomatoes"
+        },
+        {
+            "source": "eggs",
+            "target": "turkey"
+        },
+        {
+            "source": "eggs",
+            "target": "whole wheat rice"
+        },
+        {
+            "source": "french fries",
+            "target": "chicken"
+        },
+        {
+            "source": "french fries",
+            "target": "cookies"
+        },
+        {
+            "source": "french fries",
+            "target": "escalope"
+        },
+        {
+            "source": "french fries",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "french fries",
+            "target": "frozen vegetables"
+        },
+        {
+            "source": "french fries",
+            "target": "grated cheese"
+        },
+        {
+            "source": "french fries",
+            "target": "green tea"
+        },
+        {
+            "source": "french fries",
+            "target": "ground beef"
+        },
+        {
+            "source": "french fries",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "french fries",
+            "target": "milk"
+        },
+        {
+            "source": "french fries",
+            "target": "pancakes"
+        },
+        {
+            "source": "french fries",
+            "target": "spaghetti"
+        },
+        {
+            "source": "french fries",
+            "target": "tomatoes"
+        },
+        {
+            "source": "french fries",
+            "target": "turkey"
+        },
+        {
+            "source": "french fries",
+            "target": "whole wheat rice"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "green tea"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "ground beef"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "milk"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "olive oil"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "pancakes"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "shrimp"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "spaghetti"
+        },
+        {
+            "source": "frozen vegetables",
+            "target": "tomatoes"
+        },
+        {
+            "source": "green tea",
+            "target": "chicken"
+        },
+        {
+            "source": "green tea",
+            "target": "cookies"
+        },
+        {
+            "source": "green tea",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "green tea",
+            "target": "ground beef"
+        },
+        {
+            "source": "green tea",
+            "target": "milk"
+        },
+        {
+            "source": "green tea",
+            "target": "pancakes"
+        },
+        {
+            "source": "green tea",
+            "target": "shrimp"
+        },
+        {
+            "source": "green tea",
+            "target": "spaghetti"
+        },
+        {
+            "source": "green tea",
+            "target": "tomatoes"
+        },
+        {
+            "source": "green tea",
+            "target": "turkey"
+        },
+        {
+            "source": "ground beef",
+            "target": "grated cheese"
+        },
+        {
+            "source": "ground beef",
+            "target": "herb & pepper"
+        },
+        {
+            "source": "ground beef",
+            "target": "milk"
+        },
+        {
+            "source": "ground beef",
+            "target": "olive oil"
+        },
+        {
+            "source": "ground beef",
+            "target": "pancakes"
+        },
+        {
+            "source": "ground beef",
+            "target": "shrimp"
+        },
+        {
+            "source": "ground beef",
+            "target": "spaghetti"
+        },
+        {
+            "source": "ground beef",
+            "target": "tomatoes"
+        },
+        {
+            "source": "milk",
+            "target": "chicken"
+        },
+        {
+            "source": "milk",
+            "target": "cooking oil"
+        },
+        {
+            "source": "milk",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "milk",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "milk",
+            "target": "olive oil"
+        },
+        {
+            "source": "milk",
+            "target": "pancakes"
+        },
+        {
+            "source": "milk",
+            "target": "shrimp"
+        },
+        {
+            "source": "milk",
+            "target": "soup"
+        },
+        {
+            "source": "milk",
+            "target": "spaghetti"
+        },
+        {
+            "source": "milk",
+            "target": "tomatoes"
+        },
+        {
+            "source": "milk",
+            "target": "turkey"
+        },
+        {
+            "source": "milk",
+            "target": "whole wheat rice"
+        },
+        {
+            "source": "pancakes",
+            "target": "olive oil"
+        },
+        {
+            "source": "pancakes",
+            "target": "shrimp"
+        },
+        {
+            "source": "pancakes",
+            "target": "spaghetti"
+        },
+        {
+            "source": "spaghetti",
+            "target": "chicken"
+        },
+        {
+            "source": "spaghetti",
+            "target": "cooking oil"
+        },
+        {
+            "source": "spaghetti",
+            "target": "escalope"
+        },
+        {
+            "source": "spaghetti",
+            "target": "frozen smoothie"
+        },
+        {
+            "source": "spaghetti",
+            "target": "grated cheese"
+        },
+        {
+            "source": "spaghetti",
+            "target": "herb & pepper"
+        },
+        {
+            "source": "spaghetti",
+            "target": "honey"
+        },
+        {
+            "source": "spaghetti",
+            "target": "low fat yogurt"
+        },
+        {
+            "source": "spaghetti",
+            "target": "olive oil"
+        },
+        {
+            "source": "spaghetti",
+            "target": "red wine"
+        },
+        {
+            "source": "spaghetti",
+            "target": "salmon"
+        },
+        {
+            "source": "spaghetti",
+            "target": "shrimp"
+        },
+        {
+            "source": "spaghetti",
+            "target": "soup"
+        },
+        {
+            "source": "spaghetti",
+            "target": "tomatoes"
+        },
+        {
+            "source": "spaghetti",
+            "target": "turkey"
+        },
+        {
+            "source": "spaghetti",
+            "target": "whole wheat rice"
+        },
+        {
+            "source": "shrimp",
+            "target": "tomatoes"
+        }
+    ]
+}

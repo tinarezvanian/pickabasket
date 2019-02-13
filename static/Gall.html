@@ -1,0 +1,109 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#e6194b", "id": "mineral water", "label": "mineral water", "shape": "dot", "value": 30}, {"color": "#e6194b", "id": "avocado", "label": "avocado", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "cake", "label": "cake", "shape": "dot", "value": 10}, {"color": "#e6194b", "id": "burgers", "label": "burgers", "shape": "dot", "value": 12}, {"color": "#e6194b", "id": "chocolate", "label": "chocolate", "shape": "dot", "value": 26}, {"color": "#e6194b", "id": "eggs", "label": "eggs", "shape": "dot", "value": 23}, {"color": "#e6194b", "id": "french fries", "label": "french fries", "shape": "dot", "value": 20}, {"color": "#e6194b", "id": "frozen vegetables", "label": "frozen vegetables", "shape": "dot", "value": 15}, {"color": "#e6194b", "id": "green tea", "label": "green tea", "shape": "dot", "value": 17}, {"color": "#e6194b", "id": "ground beef", "label": "ground beef", "shape": "dot", "value": 15}, {"color": "#e6194b", "id": "milk", "label": "milk", "shape": "dot", "value": 21}, {"color": "#e6194b", "id": "pancakes", "label": "pancakes", "shape": "dot", "value": 13}, {"color": "#e6194b", "id": "spaghetti", "label": "spaghetti", "shape": "dot", "value": 27}, {"color": "#e6194b", "id": "turkey", "label": "turkey", "shape": "dot", "value": 8}, {"color": "#e6194b", "id": "cereals", "label": "cereals", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "champagne", "label": "champagne", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "chicken", "label": "chicken", "shape": "dot", "value": 7}, {"color": "#e6194b", "id": "cookies", "label": "cookies", "shape": "dot", "value": 4}, {"color": "#e6194b", "id": "cooking oil", "label": "cooking oil", "shape": "dot", "value": 5}, {"color": "#e6194b", "id": "escalope", "label": "escalope", "shape": "dot", "value": 5}, {"color": "#e6194b", "id": "frozen smoothie", "label": "frozen smoothie", "shape": "dot", "value": 7}, {"color": "#e6194b", "id": "grated cheese", "label": "grated cheese", "shape": "dot", "value": 5}, {"color": "#e6194b", "id": "low fat yogurt", "label": "low fat yogurt", "shape": "dot", "value": 7}, {"color": "#e6194b", "id": "olive oil", "label": "olive oil", "shape": "dot", "value": 8}, {"color": "#e6194b", "id": "salmon", "label": "salmon", "shape": "dot", "value": 3}, {"color": "#e6194b", "id": "shrimp", "label": "shrimp", "shape": "dot", "value": 10}, {"color": "#e6194b", "id": "soup", "label": "soup", "shape": "dot", "value": 4}, {"color": "#e6194b", "id": "tomatoes", "label": "tomatoes", "shape": "dot", "value": 10}, {"color": "#e6194b", "id": "whole wheat rice", "label": "whole wheat rice", "shape": "dot", "value": 6}, {"color": "#e6194b", "id": "herb \u0026 pepper", "label": "herb \u0026 pepper", "shape": "dot", "value": 4}, {"color": "#e6194b", "id": "fresh bread", "label": "fresh bread", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "honey", "label": "honey", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "red wine", "label": "red wine", "shape": "dot", "value": 2}]);
+        edges = new vis.DataSet([{"color": "#fabebe", "from": "mineral water", "to": "avocado"}, {"color": "#fabebe", "from": "cake", "to": "burgers"}, {"color": "#fabebe", "from": "chocolate", "to": "burgers"}, {"color": "#fabebe", "from": "eggs", "to": "burgers"}, {"color": "#fabebe", "from": "french fries", "to": "burgers"}, {"color": "#fabebe", "from": "frozen vegetables", "to": "burgers"}, {"color": "#fabebe", "from": "green tea", "to": "burgers"}, {"color": "#fabebe", "from": "ground beef", "to": "burgers"}, {"color": "#fabebe", "from": "milk", "to": "burgers"}, {"color": "#fabebe", "from": "mineral water", "to": "burgers"}, {"color": "#fabebe", "from": "pancakes", "to": "burgers"}, {"color": "#fabebe", "from": "spaghetti", "to": "burgers"}, {"color": "#fabebe", "from": "turkey", "to": "burgers"}, {"color": "#fabebe", "from": "chocolate", "to": "cake"}, {"color": "#fabebe", "from": "eggs", "to": "cake"}, {"color": "#fabebe", "from": "french fries", "to": "cake"}, {"color": "#fabebe", "from": "frozen vegetables", "to": "cake"}, {"color": "#fabebe", "from": "green tea", "to": "cake"}, {"color": "#fabebe", "from": "milk", "to": "cake"}, {"color": "#fabebe", "from": "mineral water", "to": "cake"}, {"color": "#fabebe", "from": "pancakes", "to": "cake"}, {"color": "#fabebe", "from": "spaghetti", "to": "cake"}, {"color": "#fabebe", "from": "mineral water", "to": "cereals"}, {"color": "#fabebe", "from": "chocolate", "to": "champagne"}, {"color": "#fabebe", "from": "chocolate", "to": "chicken"}, {"color": "#fabebe", "from": "eggs", "to": "chicken"}, {"color": "#fabebe", "from": "french fries", "to": "chicken"}, {"color": "#fabebe", "from": "green tea", "to": "chicken"}, {"color": "#fabebe", "from": "milk", "to": "chicken"}, {"color": "#fabebe", "from": "mineral water", "to": "chicken"}, {"color": "#fabebe", "from": "spaghetti", "to": "chicken"}, {"color": "#fabebe", "from": "cookies", "to": "chocolate"}, {"color": "#fabebe", "from": "cooking oil", "to": "chocolate"}, {"color": "#fabebe", "from": "eggs", "to": "chocolate"}, {"color": "#fabebe", "from": "escalope", "to": "chocolate"}, {"color": "#fabebe", "from": "french fries", "to": "chocolate"}, {"color": "#fabebe", "from": "frozen smoothie", "to": "chocolate"}, {"color": "#fabebe", "from": "frozen vegetables", "to": "chocolate"}, {"color": "#fabebe", "from": "grated cheese", "to": "chocolate"}, {"color": "#fabebe", "from": "green tea", "to": "chocolate"}, {"color": "#fabebe", "from": "ground beef", "to": "chocolate"}, {"color": "#fabebe", "from": "low fat yogurt", "to": "chocolate"}, {"color": "#fabebe", "from": "milk", "to": "chocolate"}, {"color": "#fabebe", "from": "mineral water", "to": "chocolate"}, {"color": "#fabebe", "from": "olive oil", "to": "chocolate"}, {"color": "#fabebe", "from": "pancakes", "to": "chocolate"}, {"color": "#fabebe", "from": "salmon", "to": "chocolate"}, {"color": "#fabebe", "from": "shrimp", "to": "chocolate"}, {"color": "#fabebe", "from": "soup", "to": "chocolate"}, {"color": "#fabebe", "from": "spaghetti", "to": "chocolate"}, {"color": "#fabebe", "from": "tomatoes", "to": "chocolate"}, {"color": "#fabebe", "from": "turkey", "to": "chocolate"}, {"color": "#fabebe", "from": "whole wheat rice", "to": "chocolate"}, {"color": "#fabebe", "from": "eggs", "to": "cookies"}, {"color": "#fabebe", "from": "french fries", "to": "cookies"}, {"color": "#fabebe", "from": "green tea", "to": "cookies"}, {"color": "#fabebe", "from": "eggs", "to": "cooking oil"}, {"color": "#fabebe", "from": "milk", "to": "cooking oil"}, {"color": "#fabebe", "from": "mineral water", "to": "cooking oil"}, {"color": "#fabebe", "from": "spaghetti", "to": "cooking oil"}, {"color": "#fabebe", "from": "escalope", "to": "eggs"}, {"color": "#fabebe", "from": "french fries", "to": "eggs"}, {"color": "#fabebe", "from": "frozen smoothie", "to": "eggs"}, {"color": "#fabebe", "from": "frozen vegetables", "to": "eggs"}, {"color": "#fabebe", "from": "green tea", "to": "eggs"}, {"color": "#fabebe", "from": "ground beef", "to": "eggs"}, {"color": "#fabebe", "from": "herb \u0026 pepper", "to": "eggs"}, {"color": "#fabebe", "from": "low fat yogurt", "to": "eggs"}, {"color": "#fabebe", "from": "milk", "to": "eggs"}, {"color": "#fabebe", "from": "mineral water", "to": "eggs"}, {"color": "#fabebe", "from": "olive oil", "to": "eggs"}, {"color": "#fabebe", "from": "pancakes", "to": "eggs"}, {"color": "#fabebe", "from": "shrimp", "to": "eggs"}, {"color": "#fabebe", "from": "spaghetti", "to": "eggs"}, {"color": "#fabebe", "from": "tomatoes", "to": "eggs"}, {"color": "#fabebe", "from": "turkey", "to": "eggs"}, {"color": "#fabebe", "from": "whole wheat rice", "to": "eggs"}, {"color": "#fabebe", "from": "french fries", "to": "escalope"}, {"color": "#fabebe", "from": "mineral water", "to": "escalope"}, {"color": "#fabebe", "from": "spaghetti", "to": "escalope"}, {"color": "#fabebe", "from": "frozen smoothie", "to": "french fries"}, {"color": "#fabebe", "from": "frozen vegetables", "to": "french fries"}, {"color": "#fabebe", "from": "grated cheese", "to": "french fries"}, {"color": "#fabebe", "from": "green tea", "to": "french fries"}, {"color": "#fabebe", "from": "ground beef", "to": "french fries"}, {"color": "#fabebe", "from": "low fat yogurt", "to": "french fries"}, {"color": "#fabebe", "from": "milk", "to": "french fries"}, {"color": "#fabebe", "from": "mineral water", "to": "french fries"}, {"color": "#fabebe", "from": "pancakes", "to": "french fries"}, {"color": "#fabebe", "from": "spaghetti", "to": "french fries"}, {"color": "#fabebe", "from": "tomatoes", "to": "french fries"}, {"color": "#fabebe", "from": "turkey", "to": "french fries"}, {"color": "#fabebe", "from": "whole wheat rice", "to": "french fries"}, {"color": "#fabebe", "from": "mineral water", "to": "fresh bread"}, {"color": "#fabebe", "from": "green tea", "to": "frozen smoothie"}, {"color": "#fabebe", "from": "milk", "to": "frozen smoothie"}, {"color": "#fabebe", "from": "mineral water", "to": "frozen smoothie"}, {"color": "#fabebe", "from": "spaghetti", "to": "frozen smoothie"}, {"color": "#fabebe", "from": "green tea", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "ground beef", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "low fat yogurt", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "milk", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "mineral water", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "olive oil", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "pancakes", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "shrimp", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "spaghetti", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "tomatoes", "to": "frozen vegetables"}, {"color": "#fabebe", "from": "ground beef", "to": "grated cheese"}, {"color": "#fabebe", "from": "mineral water", "to": "grated cheese"}, {"color": "#fabebe", "from": "spaghetti", "to": "grated cheese"}, {"color": "#fabebe", "from": "ground beef", "to": "green tea"}, {"color": "#fabebe", "from": "milk", "to": "green tea"}, {"color": "#fabebe", "from": "mineral water", "to": "green tea"}, {"color": "#fabebe", "from": "pancakes", "to": "green tea"}, {"color": "#fabebe", "from": "shrimp", "to": "green tea"}, {"color": "#fabebe", "from": "spaghetti", "to": "green tea"}, {"color": "#fabebe", "from": "tomatoes", "to": "green tea"}, {"color": "#fabebe", "from": "turkey", "to": "green tea"}, {"color": "#fabebe", "from": "herb \u0026 pepper", "to": "ground beef"}, {"color": "#fabebe", "from": "milk", "to": "ground beef"}, {"color": "#fabebe", "from": "mineral water", "to": "ground beef"}, {"color": "#fabebe", "from": "olive oil", "to": "ground beef"}, {"color": "#fabebe", "from": "pancakes", "to": "ground beef"}, {"color": "#fabebe", "from": "shrimp", "to": "ground beef"}, {"color": "#fabebe", "from": "spaghetti", "to": "ground beef"}, {"color": "#fabebe", "from": "tomatoes", "to": "ground beef"}, {"color": "#fabebe", "from": "mineral water", "to": "herb \u0026 pepper"}, {"color": "#fabebe", "from": "spaghetti", "to": "herb \u0026 pepper"}, {"color": "#fabebe", "from": "mineral water", "to": "honey"}, {"color": "#fabebe", "from": "spaghetti", "to": "honey"}, {"color": "#fabebe", "from": "milk", "to": "low fat yogurt"}, {"color": "#fabebe", "from": "mineral water", "to": "low fat yogurt"}, {"color": "#fabebe", "from": "spaghetti", "to": "low fat yogurt"}, {"color": "#fabebe", "from": "mineral water", "to": "milk"}, {"color": "#fabebe", "from": "olive oil", "to": "milk"}, {"color": "#fabebe", "from": "pancakes", "to": "milk"}, {"color": "#fabebe", "from": "shrimp", "to": "milk"}, {"color": "#fabebe", "from": "soup", "to": "milk"}, {"color": "#fabebe", "from": "spaghetti", "to": "milk"}, {"color": "#fabebe", "from": "tomatoes", "to": "milk"}, {"color": "#fabebe", "from": "turkey", "to": "milk"}, {"color": "#fabebe", "from": "whole wheat rice", "to": "milk"}, {"color": "#fabebe", "from": "olive oil", "to": "mineral water"}, {"color": "#fabebe", "from": "pancakes", "to": "mineral water"}, {"color": "#fabebe", "from": "red wine", "to": "mineral water"}, {"color": "#fabebe", "from": "salmon", "to": "mineral water"}, {"color": "#fabebe", "from": "shrimp", "to": "mineral water"}, {"color": "#fabebe", "from": "soup", "to": "mineral water"}, {"color": "#fabebe", "from": "spaghetti", "to": "mineral water"}, {"color": "#fabebe", "from": "tomatoes", "to": "mineral water"}, {"color": "#fabebe", "from": "turkey", "to": "mineral water"}, {"color": "#fabebe", "from": "whole wheat rice", "to": "mineral water"}, {"color": "#fabebe", "from": "pancakes", "to": "olive oil"}, {"color": "#fabebe", "from": "spaghetti", "to": "olive oil"}, {"color": "#fabebe", "from": "shrimp", "to": "pancakes"}, {"color": "#fabebe", "from": "spaghetti", "to": "pancakes"}, {"color": "#fabebe", "from": "spaghetti", "to": "red wine"}, {"color": "#fabebe", "from": "spaghetti", "to": "salmon"}, {"color": "#fabebe", "from": "spaghetti", "to": "shrimp"}, {"color": "#fabebe", "from": "tomatoes", "to": "shrimp"}, {"color": "#fabebe", "from": "spaghetti", "to": "soup"}, {"color": "#fabebe", "from": "tomatoes", "to": "spaghetti"}, {"color": "#fabebe", "from": "turkey", "to": "spaghetti"}, {"color": "#fabebe", "from": "whole wheat rice", "to": "spaghetti"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        // default to using dot shape for nodes
+        options.nodes = {
+            shape: "dot"
+        }
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

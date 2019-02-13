@@ -1,0 +1,109 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#e6194b", "id": "avocado", "label": "avocado", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "mineral water", "label": "mineral water", "shape": "dot", "value": 27}, {"color": "#e6194b", "id": "burgers", "label": "burgers", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "eggs", "label": "eggs", "shape": "dot", "value": 7}, {"color": "#e6194b", "id": "cake", "label": "cake", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "cereals", "label": "cereals", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "chicken", "label": "chicken", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "chocolate", "label": "chocolate", "shape": "dot", "value": 5}, {"color": "#e6194b", "id": "cooking oil", "label": "cooking oil", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "spaghetti", "label": "spaghetti", "shape": "dot", "value": 15}, {"color": "#e6194b", "id": "turkey", "label": "turkey", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "fresh bread", "label": "fresh bread", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "frozen smoothie", "label": "frozen smoothie", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "frozen vegetables", "label": "frozen vegetables", "shape": "dot", "value": 3}, {"color": "#e6194b", "id": "grated cheese", "label": "grated cheese", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "herb \u0026 pepper", "label": "herb \u0026 pepper", "shape": "dot", "value": 3}, {"color": "#e6194b", "id": "ground beef", "label": "ground beef", "shape": "dot", "value": 6}, {"color": "#e6194b", "id": "honey", "label": "honey", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "low fat yogurt", "label": "low fat yogurt", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "milk", "label": "milk", "shape": "dot", "value": 7}, {"color": "#e6194b", "id": "soup", "label": "soup", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "olive oil", "label": "olive oil", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "pancakes", "label": "pancakes", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "red wine", "label": "red wine", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "salmon", "label": "salmon", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "shrimp", "label": "shrimp", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "tomatoes", "label": "tomatoes", "shape": "dot", "value": 2}, {"color": "#e6194b", "id": "whole wheat rice", "label": "whole wheat rice", "shape": "dot", "value": 1}, {"color": "#e6194b", "id": "french fries", "label": "french fries", "shape": "dot", "value": 2}]);
+        edges = new vis.DataSet([{"from": "avocado", "to": "mineral water"}, {"from": "burgers", "to": "eggs"}, {"from": "cake", "to": "mineral water"}, {"from": "cereals", "to": "mineral water"}, {"from": "chicken", "to": "mineral water"}, {"from": "chocolate", "to": "mineral water"}, {"from": "cooking oil", "to": "mineral water"}, {"from": "cooking oil", "to": "spaghetti"}, {"from": "turkey", "to": "eggs"}, {"from": "fresh bread", "to": "mineral water"}, {"from": "frozen smoothie", "to": "mineral water"}, {"from": "frozen vegetables", "to": "mineral water"}, {"from": "grated cheese", "to": "mineral water"}, {"from": "grated cheese", "to": "spaghetti"}, {"from": "herb \u0026 pepper", "to": "ground beef"}, {"from": "ground beef", "to": "mineral water"}, {"from": "ground beef", "to": "spaghetti"}, {"from": "herb \u0026 pepper", "to": "mineral water"}, {"from": "herb \u0026 pepper", "to": "spaghetti"}, {"from": "honey", "to": "mineral water"}, {"from": "low fat yogurt", "to": "mineral water"}, {"from": "milk", "to": "mineral water"}, {"from": "soup", "to": "milk"}, {"from": "olive oil", "to": "mineral water"}, {"from": "pancakes", "to": "mineral water"}, {"from": "red wine", "to": "mineral water"}, {"from": "salmon", "to": "mineral water"}, {"from": "shrimp", "to": "mineral water"}, {"from": "soup", "to": "mineral water"}, {"from": "spaghetti", "to": "mineral water"}, {"from": "tomatoes", "to": "mineral water"}, {"from": "turkey", "to": "mineral water"}, {"from": "whole wheat rice", "to": "mineral water"}, {"from": "olive oil", "to": "spaghetti"}, {"from": "red wine", "to": "spaghetti"}, {"from": "salmon", "to": "spaghetti"}, {"from": "tomatoes", "to": "spaghetti"}, {"from": "chocolate", "to": "eggs"}, {"from": "eggs", "to": "mineral water"}, {"from": "chocolate", "to": "spaghetti"}, {"from": "eggs", "to": "spaghetti"}, {"from": "chocolate", "to": "ground beef"}, {"from": "chocolate", "to": "milk"}, {"from": "milk", "to": "spaghetti"}, {"from": "eggs", "to": "ground beef"}, {"from": "eggs", "to": "milk"}, {"from": "french fries", "to": "spaghetti"}, {"from": "french fries", "to": "mineral water"}, {"from": "frozen vegetables", "to": "milk"}, {"from": "frozen vegetables", "to": "spaghetti"}, {"from": "ground beef", "to": "milk"}, {"from": "pancakes", "to": "spaghetti"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        // default to using dot shape for nodes
+        options.nodes = {
+            shape: "dot"
+        }
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
