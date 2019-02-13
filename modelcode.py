@@ -204,7 +204,7 @@ def simulfunc():
     communities = list(com)
     node_com = {}
     nb_com = len(communities)
-    cl = np.ceil(nb_com / 4) # there are stochastic studies that show in hierarchical clustering, 1/4th of branches in hierarchi is an acceptable cuttoff
+    cl = np.ceil(nb_com / 4)
     clusters = communities[int(cl)]
     for i in range(len(list(clusters))):
         for j in list(clusters)[i]:
