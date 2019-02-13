@@ -1,0 +1,205 @@
+{% extends 'site_template.html' %}
+
+{% block body %}
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+         Construct Pre-packaged Bestseller Baskets for Online Grocery Stores
+       </h1>
+
+     </div>
+   </div>
+
+   <div class="container-fluid">
+    <div class="well">
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-3">
+
+
+          <h3>
+            <i class="fa fa-dashboard"></i>  <a href="https://www.dropbox.com/s/r5o4ryawei5uilt/store_data.csv?dl=0">Sample Data </a>
+          </h3>
+        </div>
+
+        <div class="col-lg-3">
+          <h3>
+            <i class="fa fa-desktop"></i>  <a href="https://drive.google.com/open?id=1JQKk7XaJzWionFzQeJ0Hqpq1Nmn5O-54D3Uo2eeXTjQ">Slides</a>
+          </h3>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="col-lg-8">
+     <div class="well">
+
+
+
+
+
+
+
+
+      <p>
+<!--        Given a threshold of 1%, you can see the bestseller baskets of different size by the Exploratory Data Analysis Bottom. Each row is a frequent basket and the length of the bar show their support measure.
+       Confidence is a measure associated to each generated rule, derived from the Bayes Theorem. Requiring higher level of confidence decrease the number of rules generated. -->
+   <h4>    
+Upload your sales data to see what your customers buy together...
+</h4>
+     </p>
+     <form method="POST" action="" enctype="multipart/form-data">
+       {{ form.hidden_tag() }}
+       <div class="form-group">
+        <div class="input-group input-file" >
+          <input type="file" class="form-control" name='file' placeholder='Choose a file...' > 
+          <input type="submit" value="Submit"> {{ upload }}
+          <span class="input-group-btn">            
+            <!--   </span> -->
+            <!-- </div> -->
+
+          </form>
+
+
+        </div>
+      </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="alert alert-success">
+        <strong>Success!</strong> File uploaded. Ready to Run.
+      </div>
+    </div>
+    <div class="col-md-4">
+
+      <a class="btn btn-primary" href="simul" role="button">Pick Baskets</a>
+
+    </div>
+  </div>
+
+
+
+
+
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <img class="img-thumbnail" src="static/paperbasket.png" alt="">
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}
+
+
+
+
+<!-- /.container-fluid -->
+<!--   <div class="wrapper">
+    <div class="score">
+      <div class="left">Score: <span id="score"></span></div>
+      <div class="right">High Score: <span id="highscore"></span></div>
+    </div>
+
+    <div id="game"></div>
+    <div id="newgame"></div>
+
+  </div>
+
+  <script type="module">
+    import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
+    import notebook from "https://api.observablehq.com/@jashkenas/breakout.js?key=a1c505cd06bba653";
+    const renders = {
+      "viewof c": "#game",
+      "score": "#score",
+      "highscore": "#highscore",
+      "viewof newgame": "#newgame"
+    };
+    Runtime.load(notebook, (variable) => {
+      const selector = renders[variable.name];
+      if (selector) {
+        return new Inspector(document.querySelector(selector));
+      } else {
+        return true;
+      }
+    });
+  </script> -->
+
+<!-- <p id="viewof-airline"></p>
+<div class="fullwidth">
+  <div id="legend"></div>
+  <div id="chart"></div>
+</div>
+
+<script type="module">
+   import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
+   import notebook from "https://api.observablehq.com/@clhenrick/mapping-airline-data-from-a-mapd-database.js?key=a9b1f4cfbf12cc08";
+
+   const renders = {
+    "viewof airline": "#viewof-airline",
+    "legend": "#legend",
+    "chart": "#chart",
+};
+
+Runtime.load(notebook, (variable) => {
+    const selector = renders[variable.name];
+    if (selector) {
+      return new Inspector(document.querySelector(selector));
+  }
+});
+</script> -->
+
+
+
+
+
+
+
+
+<!--   <form method=post action="">
+    The sine of
+    {{( form.r )}}
+    <input type=submit value=equals>
+    {% if s != 1.2345 %}
+    {{s}}
+    there is a value
+    {% endif %} -->
+
+
+<!-- </div>
+
+<p>
+</form> -->
+
+
+<!-- /.row -->
+
+
+<!--     <p> 
+     Two metrics are used to pick items and constructs bestseller packages. 
+     1) Support, a metric that is used to measure the normalized frequency of all subsets of buyers' baskets.
+   Indicating a threshold for the support measure restricts model to find subsets of baskets that have greater normalized frequency than threshold.</p>
+
+   <p> 2) Confidence, a metric used to identify most important relationships between previously found subsets. is egg-> spegetti is a rule, then confidence is the ratio of support of egg and spagetti appearing in buyer's basket togeather to the support of egg. the goal is to compare each candidate relationship to its subsets.</p> -->

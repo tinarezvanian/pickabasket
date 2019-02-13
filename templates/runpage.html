@@ -1,0 +1,180 @@
+{% extends 'site_template.html' %}
+
+{% block body %}
+<div id="page-wrapper">
+  <div class="jumbotron text-center">
+    <h1> Tina's App</h1>
+    <p> Network analysis</p> 
+  </div>
+  <div class="alert alert-success">
+    <strong>Success!</strong> Indicates a successful or positive action.
+  </div>
+
+
+  <div class="container">
+    <div class="col-md-6 col-md-offset-2">
+      <form method="POST" action="" enctype="multipart/form-data">
+         <!-- {{ form.hidden_tag() }} -->
+        <div class="form-group">
+          <div class="input-group input-file" >
+            <!-- {{ form.input_file(id="my-file-selector") }}          -->
+            <span class="input-group-btn">
+              <!-- {{ form.submit(class_="btn btn-primary") }} -->
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- <form method="POST" action="">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    <input type="submit" value="Go">
+</form>
+ -->
+
+  <div class="well">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6">
+<a class="twitter-timeline" data-lang="en" data-width="400" data-height="600" data-theme="dark" href="https://twitter.com/InsightDataSci?ref_src=twsrc%5Etfw">Tweets by InsightDataSci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+        <div class="col-sm-3">
+          <h3>Column 3</h3> 
+          <p>Lorem ipsum dolor..</p>
+          <p>Ut enim ad..</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Tina's App
+          </h1>
+          <ol class="breadcrumb">
+            <li>
+              <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+              <i class="fa fa-file"></i> Running...
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Line Graph Example with Tooltips</h3>
+        </div>
+        <div class="panel-body">
+          <div class="flot-chart">
+            <div class="flot-chart-content" id="flot-line-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+<!-- /.container-fluid -->
+<!--   <div class="wrapper">
+    <div class="score">
+      <div class="left">Score: <span id="score"></span></div>
+      <div class="right">High Score: <span id="highscore"></span></div>
+    </div>
+
+    <div id="game"></div>
+    <div id="newgame"></div>
+
+  </div>
+
+  <script type="module">
+    import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
+    import notebook from "https://api.observablehq.com/@jashkenas/breakout.js?key=a1c505cd06bba653";
+    const renders = {
+      "viewof c": "#game",
+      "score": "#score",
+      "highscore": "#highscore",
+      "viewof newgame": "#newgame"
+    };
+    Runtime.load(notebook, (variable) => {
+      const selector = renders[variable.name];
+      if (selector) {
+        return new Inspector(document.querySelector(selector));
+      } else {
+        return true;
+      }
+    });
+  </script> -->
+
+<!-- <p id="viewof-airline"></p>
+<div class="fullwidth">
+  <div id="legend"></div>
+  <div id="chart"></div>
+</div>
+
+<script type="module">
+   import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1?module";
+   import notebook from "https://api.observablehq.com/@clhenrick/mapping-airline-data-from-a-mapd-database.js?key=a9b1f4cfbf12cc08";
+
+   const renders = {
+    "viewof airline": "#viewof-airline",
+    "legend": "#legend",
+    "chart": "#chart",
+};
+
+Runtime.load(notebook, (variable) => {
+    const selector = renders[variable.name];
+    if (selector) {
+      return new Inspector(document.querySelector(selector));
+  }
+});
+</script> -->
+
+
+
+
+
+
+
+
+<!--   <form method=post action="">
+    The sine of
+    {{( form.r )}}
+    <input type=submit value=equals>
+    {% if s != 1.2345 %}
+    {{s}}
+    there is a value
+    {% endif %} -->
+
+
+<!-- </div>
+
+<p>
+</form> -->
+
+
+<!-- /.row -->

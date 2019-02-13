@@ -1,0 +1,244 @@
+
+
+{% extends 'site_template.html' %}
+
+{% block body %}
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Construct Pre-packaged Bestseller Baskets for Online Grocery Stores
+                    </h1>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="well">
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-3">
+
+
+                            <h3>
+                                <i class="fa fa-dashboard"></i> <a
+                                    href="https://www.dropbox.com/s/r5o4ryawei5uilt/store_data.csv?dl=0">Sample
+                                Data </a>
+                            </h3>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h3>
+                                <i class="fa fa-desktop"></i> <a
+                                    href="https://drive.google.com/open?id=1JQKk7XaJzWionFzQeJ0Hqpq1Nmn5O-54D3Uo2eeXTjQ">Slides</a>
+                            </h3>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+            <div class="container-fluid">
+
+                <div class="col-lg-8">
+                    <div class="well">
+
+
+                        <p>
+                            <!--        Given a threshold of 1%, you can see the bestseller baskets of different size by the Exploratory Data Analysis Bottom. Each row is a frequent basket and the length of the bar show their support measure.
+                             Confidence is a measure associated to each generated rule, derived from the Bayes Theorem. Requiring higher level of confidence decrease the number of rules generated. -->
+                        <h3>
+                            Upload your sales data to see what your customers buy together...
+                        </h3>
+                        </p>
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                <div class="input-group input-file">
+                                    <input type="file" class="form-control" name='file' placeholder='Choose a file...'>
+                                    <input type="submit" value="Submit"> {{ upload }}
+                                    <span class="input-group-btn">
+
+                        </form>
+                        {% if filedata %}
+                            Number of files: {{ filedata|length }}
+
+                        {% else %}
+                            No files.
+                        {% endif %}
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="alert alert-success">
+                            <strong>Success!</strong> File uploaded. Ready to Run.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+
+                        <a class="btn btn-primary" href="simul" role="button">Pick Basket</a>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <img class="img-thumbnail"
+                 src="static/paperbasket.png"
+                 alt="">
+
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+        {#        <div class="row">#}
+        {#            <!--   <div class="col-lg-0">#}
+        {#                <img class="img-thumbnail" src="static/images/ax01.png" alt="">#}
+        {##}
+        {#              </div> -->#}
+        {##}
+        {#            <div class="col-lg-10">#}
+        {#                <img class="img-thumbnail" src="static/barchart.png" alt="">#}
+        {#            </div>#}
+        {##}
+        {#            <!--     <div class="col-lg-1">#}
+        {#                <img class="img-thumbnail" src="static/images/ax.png" alt="">#}
+        {#              </div> -->#}
+        {##}
+        {#        </div>#}
+
+        <!-- <div class="row mt-30"></div> -->
+
+        <!-- <div class="well">
+          <p>Support of a subset of buyers'basket is the ratio of frequency of common subsets to total number of transactions. Requiring higher level of support decrease the number of accepted frequent subsets.
+
+          Confidence is a measure associated to each generated rule, derived from the Bayes Theorem. Requiring higher level of confidence decrease the number of rules generated.</p>
+        </div>
+        -->
+
+
+        {#        <div class="well">#}
+        {#            <div class="row">#}
+        {#                <div class="col-md-5">#}
+        {#                    <!--     <div class="alert alert-success">#}
+        {#                          <strong>Success!</strong> File uploaded. Ready to Run.#}
+        {#                        </div> -->#}
+        {#                </div>#}
+        {#                <div class="col-md-6">#}
+        {##}
+        {#                    <a class="btn btn-lg btn-primary" href="simul" role="button">Construct Packages</a>#}
+        {##}
+        {#                </div>#}
+        {#            </div>#}
+        {##}
+        {#        </div>#}
+
+
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="col-xs-12" style="height:50px;"></div>
+
+
+        <div class="col-sm-11">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Recommended Baskets Without Common Items</h3>
+                </div>
+                <div class="panel-body">
+                    <h4> Each column in the table is a basket that can be pre-packeged and offered.
+                        The Network on the left shows bestseller items with a node that are linked togethar if they are
+                        purchased together.
+                        Each color in the network represents one of the recommended baskets.
+                    </h4>
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <h3>Recommended Baskets</h3>
+                            {{ data2 | safe }}
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <h3> Items Frequently Purchaseded Together</h3>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item"
+                                            src="/static/ggrule3percentconf_c.html"></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12" style="height:50px;"></div>
+
+
+        <div class="col-sm-11">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Recommended Baskets With Common Items</h3>
+                </div>
+                <div class="panel-body">
+                    <h4> Each column in the table is a basket and may have common food items with the other
+                        baskets.</h4>
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <h3>Recommended Baskets</h3>
+                            {{ data1 | safe }}
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+{#    <!-- {{ super() }}#}
+{#  <script src="{{ url_for('.static', filename='js/inputFileButton.js') }}" ></script> -->#}
+{#    <script src="/static/js/networkgraph.js"></script>#}
+
+{% endblock %}
+
+
